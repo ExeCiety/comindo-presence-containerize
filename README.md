@@ -1,10 +1,10 @@
 # Containerize For Presensi Comindo
 
 ## How to Use
-1. Create a folder that will be used for root all `presensi comindo` projects
-1. Clone this repository in `containerize-presensi-comindo` folder inside root directory
-2. Clone [backend-presensi-comindo](https://github.com/ExeCiety/be-presensi-comindo) repository in `be-presensi-comindo` folder inside root directory
-3. Clone [frontent-presensi-comindo](https://github.com/ExeCiety/fe-presensi-comindo) repository in `fe-presensi-comindo` folder inside root directory
+1. Create a folder that will be used for `root` all `presensi comindo` projects
+1. Clone this repository into `containerize-presensi-comindo` folder inside `root` directory
+2. Clone [backend-presensi-comindo](https://github.com/ExeCiety/be-presensi-comindo) repository into `be-presensi-comindo` folder inside `root` directory
+3. Clone [frontent-presensi-comindo](https://github.com/ExeCiety/fe-presensi-comindo) repository into `fe-presensi-comindo` folder inside `root` directory
 
 The folder structure should be like this: <br />
 ![Project Structure](https://i.imgur.com/Itdm1Z4.png)
