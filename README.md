@@ -6,7 +6,7 @@
 2. Clone [backend-presensi-comindo](https://github.com/ExeCiety/be-presensi-comindo) repository in `be-presensi-comindo` folder inside root directory
 3. Clone [frontent-presensi-comindo](https://github.com/ExeCiety/fe-presensi-comindo) repository in `fe-presensi-comindo` folder inside root directory
 
-The folder structure should be like this:
+The folder structure should be like this: <br />
 ![Project Structure](https://i.imgur.com/Itdm1Z4.png)
 
 5. Run `./service-up-build.sh` or `docker compose -p presensi-comindo up -d --build` inside `containerize-presensi-comindo` folder
