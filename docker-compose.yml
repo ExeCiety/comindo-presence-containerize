@@ -1,0 +1,49 @@
+version: '3'
+services:
+  db-postgres:
+    container_name: presensi-comindo-postgres
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "4220:5432"
+
+  backend:
+    container_name: presensi-comindo-backend
+    environment:
+      - APP_PORT=3002
+      - DB_HOST=db-postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=presensi_comindo
+    build:
+      context: ../be-presensi-comindo
+      dockerfile: ops/local.Dockerfile
+    ports:
+      - "4231:3002"
+    depends_on:
+      - db-postgres
+    volumes:
+      - ../be-presensi-comindo:/app
+        
+  frontend:
+    container_name: presensi-comindo-frontend
+    environment:
+      - APP_PORT=3001
+    build:
+      context: ../fe-presensi-comindo
+      dockerfile: ops/local.Dockerfile
+    ports:
+      - "4232:3001"
+    depends_on:
+      - backend
+    volumes:
+      - ../fe-presensi-comindo:/app
+
+volumes:
+  db_data:
