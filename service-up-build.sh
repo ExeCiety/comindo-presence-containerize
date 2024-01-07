@@ -10,4 +10,4 @@ if [ ! -f $COMPOSE_FILE ]; then
 fi
 
 # Start the Docker Compose services
-docker compose -p presensi-comindo up -d --build
+docker compose -p comindo-presence up -d --build

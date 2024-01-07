@@ -1,7 +1,7 @@
 version: '3'
 services:
   db-postgres:
-    container_name: presensi-comindo-postgres
+    container_name: comindo-presence-postgres
     image: postgres:14
     environment:
       POSTGRES_USER: postgres
@@ -13,37 +13,37 @@ services:
       - "4220:5432"
 
   backend:
-    container_name: presensi-comindo-backend
+    container_name: comindo-presence-backend
     environment:
       - APP_PORT=3002
       - DB_HOST=db-postgres
       - DB_PORT=5432
       - DB_USER=postgres
       - DB_PASS=postgres
-      - DB_NAME=presensi_comindo
+      - DB_NAME=db_comindo_presence
     build:
-      context: ../be-presensi-comindo
+      context: ../comindo-presence-backend
       dockerfile: ops/local.Dockerfile
     ports:
       - "4231:3002"
     depends_on:
       - db-postgres
     volumes:
-      - ../be-presensi-comindo:/app
+      - ../comindo-presence-backend:/app
         
   frontend:
-    container_name: presensi-comindo-frontend
+    container_name: comindo-presence-frontend
     environment:
       - APP_PORT=3001
     build:
-      context: ../fe-presensi-comindo
+      context: ../comindo-presence-frontend
       dockerfile: ops/local.Dockerfile
     ports:
       - "4232:3001"
     depends_on:
       - backend
     volumes:
-      - ../fe-presensi-comindo:/app
+      - ../comindo-presence-frontend:/app
 
 volumes:
   db_data:
