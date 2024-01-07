@@ -1,4 +1,4 @@
-# Containerize For Presensi Comindo
+# Containerize For Comindo Presence Project
 
 ## How to Use
 1. Create a folder that will be used for `root` all `comindo presence` projects
